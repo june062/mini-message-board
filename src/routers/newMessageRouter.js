@@ -4,6 +4,7 @@ const sendMsgToDatabase = require("../controllers/newMessageController");
 
 newMessageRouter.get("/", (req, res) => {
   res.render("newMessageView");
+  res.end();
 });
 newMessageRouter.post("/", (req, res, next) => {
   sendMsgToDatabase(req, res);
