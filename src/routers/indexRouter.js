@@ -1,11 +1,11 @@
 const { Router } = require("express");
 const indexRouter = Router();
-const indexRouterController = require("../controllers/indexRouterController.js");
+const retrieveMessages = require("../controllers/indexRouterController.js");
 
 indexRouter.get(
   "/",
   (req, res, next) => {
-    indexRouterController(req, res);
+    retrieveMessages(req, res);
 
     next();
   },
@@ -16,4 +16,8 @@ indexRouter.get(
     });
   }
 );
+indexRouter.get("/:messageId", (req, res) => {
+  console.log(req.params.messageId);
+});
+
 module.exports = indexRouter;
