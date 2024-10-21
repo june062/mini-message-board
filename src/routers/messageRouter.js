@@ -9,7 +9,6 @@ messageRouter.get(
     next();
   },
   (req, res) => {
-    console.log(res.locals.messageInfo.user);
     res.render("messageInfo", { message: res.locals.messageInfo });
   }
 );

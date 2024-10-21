@@ -8,5 +8,12 @@
   </head>
   <body>
     <h1>Message Information</h1>
+    <%- include('./reusableTemplates/navigationView')%>
+    <ul>
+      <%for(let prop in message){%>
+
+      <li><%=prop%> : <%=message[prop]%></li>
+      <%}%>
+    </ul>
   </body>
 </html>
