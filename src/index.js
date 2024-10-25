@@ -1,6 +1,9 @@
+const path = require("node:path");
+require("dotenv").config({
+  path: path.resolve("../.env"),
+});
 const express = require("express");
 const app = express();
-const path = require("node:path");
 const indexRouter = require("./routers/indexRouter");
 const newMessageRouter = require("./routers/newMessageRouter");
 const messageRouter = require("./routers/messageRouter");
