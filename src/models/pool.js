@@ -2,10 +2,7 @@ const { Pool } = require("pg");
 const { argv } = require("node:process");
 const { Sequelize } = require("sequelize");
 
+console.log(process.env.DB_PRODUCTION_URI);
 module.exports = new Pool({
-  host: `${process.env.DB_HOST}`,
-  user: `${process.env.DB_USER}`,
-  database: `${process.env.DB_NAME}`,
-  password: `${process.env.DB_PW}`,
-  port: `${process.env.DB_PORT}`,
+  connectionString: `${process.env.DB_PRODUCTION_URI}`,
 });
