@@ -7,13 +7,13 @@ const {
 
 indexRouter.get(
   "/",
-  (req, res, next) => {
-    retrieveMessages(req, res);
+  async (req, res, next) => {
+    await retrieveMessages(req, res);
 
     next();
   },
-  (req, res) => {
-    res.render("indexView", {
+  async (req, res) => {
+    await res.render("indexView", {
       messages: res.locals.messages,
       title: "Mini Message Board",
     });

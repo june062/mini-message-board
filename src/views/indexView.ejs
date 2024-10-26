@@ -8,10 +8,12 @@
     <h1><%=title%></h1>
     <%- include('./reusableTemplates/navigationView')%>
     <ul>
+      <%console.log(messages.message_user)%>
       <% for(let i = 0; i < messages.length; i++){%>
       <li>
-        <%=messages[i].user %>
-        <button><a href="/message/<%=i%>">view</a></li>
+      
+        <%=messages[i].message_user %>
+        <button><a href="/message/<%=messages.id%>">view</a></li>
         </button>
       <ul>
         <%for(const prop in messages[i]){%>
