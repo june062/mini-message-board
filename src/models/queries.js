@@ -8,7 +8,16 @@ async function retrieveMessages() {
     console.log(err);
   }
 }
-async function retrieveMessageInfo() {}
+async function retrieveMessageInfo(id) {
+  try {
+    let { rows } = await pool.query("SELECT * FROM messages WHERE id=$1", [id]);
+    let row = rows[0];
+
+    return row;
+  } catch (error) {
+    console.log(error);
+  }
+}
 async function sendMsgToDatabase() {}
 
 module.exports = { retrieveMessages, retrieveMessageInfo, sendMsgToDatabase };

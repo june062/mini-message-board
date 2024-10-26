@@ -1,6 +1,8 @@
-const messages = require("../models/messagesDB");
+const queries = require("../models/queries");
 
 async function retrieveMessageInfo(req, res) {
-  res.locals.messageInfo = messages[req.params.messageId];
+  res.locals.messageInfo = await queries.retrieveMessageInfo(
+    req.params.messageId
+  );
 }
 module.exports = retrieveMessageInfo;

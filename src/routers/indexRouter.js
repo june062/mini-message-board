@@ -12,8 +12,8 @@ indexRouter.get(
 
     next();
   },
-  async (req, res) => {
-    await res.render("indexView", {
+  (req, res) => {
+    res.render("indexView", {
       messages: res.locals.messages,
       title: "Mini Message Board",
     });

@@ -4,8 +4,8 @@ const retrieveMessageInfo = require("../controllers/messageController.js");
 
 messageRouter.get(
   "/:messageId",
-  (req, res, next) => {
-    retrieveMessageInfo(req, res);
+  async (req, res, next) => {
+    await retrieveMessageInfo(req, res);
     next();
   },
   (req, res) => {
