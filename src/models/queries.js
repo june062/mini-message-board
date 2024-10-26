@@ -18,6 +18,11 @@ async function retrieveMessageInfo(id) {
     console.log(error);
   }
 }
-async function sendMsgToDatabase() {}
+async function sendMsgToDatabase(user, message, added) {
+  await pool.query(
+    "INSERT INTO messages (message_user,message,added) VALUES($1,$2,$3)",
+    [user, message, added]
+  );
+}
 
 module.exports = { retrieveMessages, retrieveMessageInfo, sendMsgToDatabase };

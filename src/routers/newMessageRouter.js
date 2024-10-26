@@ -6,8 +6,8 @@ newMessageRouter.get("/", (req, res) => {
   res.render("newMessageView");
   res.end();
 });
-newMessageRouter.post("/", (req, res, next) => {
-  sendMsgToDatabase(req, res);
+newMessageRouter.post("/", async (req, res, next) => {
+  await sendMsgToDatabase(req, res);
   res.redirect("/");
   res.end();
 });
